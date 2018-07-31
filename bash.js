@@ -1,14 +1,20 @@
-let pwd = require("./pwd.js")
-let ls = require('./ls.js')
+let pwd = require("./pwd.js");
+let ls = require('./ls.js');
+let cat = require('./cat.js');
 
 process.stdout.write('prompt >');
 
 process.stdin.on('data', (data) => {
-    const cmd = data.toString().trim();
-    if (cmd === "pwd") {
-        pwd()
-    } else if (cmd === 'ls') {
-        ls()
+    const cmds = data.toString().trim().split(' ');
+
+    if (cmds[0] === "pwd") {
+        pwd();
+    }
+    if (cmds[0] === 'ls') {
+        ls();
+    }
+    if (cmds[0] === 'cat') {
+        cat(cmds[1]);
     }
     setTimeout(() => { process.stdout.write('\nprompt >') }, 1000)
 })
