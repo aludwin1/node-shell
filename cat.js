@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-function cat(file) {
+function cat(func, file) {
   fs.readFile(`./${file}`, 'utf8', (err, data) => {
     if (err) throw err;
-    console.log(data);
+    func(data);
   });
 }
 

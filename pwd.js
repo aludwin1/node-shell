@@ -1,4 +1,4 @@
-function pwd() {
-    process.stdout.write(process.cwd())
+function pwd(func) {
+    func(process.cwd());
 }
-module.exports = pwd
+module.exports = pwd;
