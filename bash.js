@@ -1,7 +1,7 @@
-let pwd = require("./pwd.js");
-let ls = require('./ls.js');
-let cat = require('./cat.js');
-let curl = require('./curl.js');
+const pwd = require("./pwd");
+const ls = require('./ls');
+const cat = require('./cat');
+const curl = require('./curl');
 
 
 const done = output => {
